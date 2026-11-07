@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="referrer" content="no-referrer">
+  <title>AI Tab Alert — Privacy Policy</title>
+  <meta name="description" content="Privacy policy for the AI Tab Alert browser extension.">
+  <style>
+    :root { color-scheme: light dark; font-family: system-ui, -apple-system, "Segoe UI", Arial, sans-serif; line-height: 1.65; }
+    body { max-width: 780px; margin: 0 auto; padding: 2rem 1.3rem 4rem; }
+    h1 { font-size: 2rem; line-height: 1.2; }
+    h2 { font-size: 1.2rem; margin-top: 2.2rem; }
+    p, li { max-width: 75ch; }
+    .meta { color: #777; font-size: .9rem; }
+    a { color: #1a75d2; }
+    @media (prefers-color-scheme: dark) { .meta { color: #aaa; } a { color: #81b9ff; } }
+  </style>
+</head>
+<body>
+<main>
+  <h1>AI Tab Alert — Privacy Policy</h1>
+  <p class="meta">Effective November 7, 2026. Describes the AI Tab Alert browser extension version 5.0.38.</p>
+  <p>AI Tab Alert is an independent browser extension for tracking activity in open ChatGPT conversations. It provides Working/Done/Error tab indicators, optional completion sounds, per-chat colors and flags, compact chat statistics, and a user-controlled first-in-first-out (FIFO) scheduler. It is not affiliated with OpenAI.</p>
+
+  <h2>1. Where it operates and what it reads</h2>
+  <p>AI Tab Alert runs on ChatGPT pages at <code>chatgpt.com</code> and the legacy <code>chat.openai.com</code> address. To provide its functions, it can inspect the open conversation URL and identifier, visible message structure and counts, approximate visible-text lengths, response and error controls, timestamps, selected/background tab state, and actions involving its controls.</p>
+  <p>If you enable FIFO scheduling, the extension can also examine the current composer text and edits to track your queued intent and prevent duplicate or unintended sends. It may temporarily hold that text in the ChatGPT page's memory. It observes successful copy actions to acknowledge finished responses, without needing to read the actual contents of the system clipboard.</p>
+  <p>The extension necessarily processes some information displayed on ChatGPT pages; it would be inaccurate to say that it never accesses chat content.</p>
+
+  <h2>2. Information stored locally</h2>
+  <p>AI Tab Alert stores settings and operational records such as sound preferences, chat-specific colors and flags, conversation identifiers, first-seen and response-completion timestamps, seen/unseen status, FIFO coordination, limited diagnostics, and temporary tab identities. Depending on the feature, data is stored in browser extension storage or in the ChatGPT website's browser <code>localStorage</code> or <code>sessionStorage</code>.</p>
+  <p>Some records last only for the browser session. Others can persist until cleared or overwritten. Records in ChatGPT's website-origin storage may be accessible to that website's scripts. Browser storage is not a substitute for encrypted secret storage.</p>
+
+  <h2>3. Optional local Director Relay status</h2>
+  <p>When a compatible Director Relay service is running on your computer, AI Tab Alert may automatically request a read-only reliability indicator from <code>http://127.0.0.1:47811/v1/presentation/reliability</code>. The request includes the current conversation identifier in its URL query. It does not include ChatGPT prompt/response bodies, cookies, or authentication credentials.</p>
+  <p>This uses ordinary HTTP over the computer's local loopback interface, not encrypted HTTPS and not a public Internet destination. Local processes and the companion service's logs may be able to observe the identifier. If the service is unavailable, AI Tab Alert does not show a positive reliability result. Version 5.0.38 does not provide a separate opt-in switch for this local check.</p>
+  <p>Director Relay is separate software. Its own storage and data handling are not controlled by AI Tab Alert and should be assessed separately.</p>
+
+  <h2>4. Sharing and other uses</h2>
+  <p>The reviewed extension code does not contain a developer-operated cloud analytics uploader, advertising tracking, data sales, or a routine upload of ChatGPT message bodies to an extension developer's Internet server. It is not intended to profile browsing activity on unrelated websites. The optional same-device Director Relay check described above is the extension's identified outbound data request.</p>
+  <p>This policy does not describe ChatGPT's own network activity, your browser's independent behavior, unrelated extensions, or other features of separately installed companion applications.</p>
+
+  <h2>5. Your choices and deletion</h2>
+  <p>You can turn off the completion chime and manage chat colors, flags, and FIFO through the extension's controls. Uninstalling AI Tab Alert stops its operation and normally removes extension-owned storage. However, some records written to ChatGPT's website <code>localStorage</code> can remain after uninstall. Removing those records may require clearing ChatGPT site data in browser settings, which can also sign you out and remove unrelated site preferences.</p>
+  <p>There is no developer-operated account deletion service or fixed central retention period for this locally stored information. Retention depends on browser storage and feature-specific cleanup.</p>
+
+  <h2>6. Security and updates</h2>
+  <p>AI Tab Alert limits its page matching to ChatGPT origins. Its optional local request uses a fixed loopback address, port and path, validates conversation identifiers, omits credentials, and rejects redirects. The local HTTP request is not encrypted transport. We will update this page if a new version changes the way the extension processes or shares information.</p>
+
+  <h2>7. Privacy questions</h2>
+  <p>For a privacy question or support issue, use the <a href="https://github.com/jasoncayen-star/AI-Tab-Alert-Updates/issues" rel="noopener noreferrer">public AI Tab Alert issue tracker</a>. GitHub Issues are public; please do not include private conversations, passwords, or other confidential information in an issue.</p>
+</main>
+</body>
+</html>
